@@ -10,35 +10,19 @@ const body = document.body
 const newDiv = document.createElement('div');
 
 newDiv.id = "history";
-// newDiv.classList.add("history");
 console.log(newDiv)
 newDiv.innerHTML = "<h2>The History of Soup Joumou</h2><p>Every New Year’s Day, Haitians around the world consume soup joumou as a way to commemorate Haitian Independence Day. On January 1, 1804, Haitians declared independence from French colonial rule following the Haitian Revolution that began in 1791.</p>"
 
 body.appendChild(newDiv)
 
 
-// const ingredientList = document.getElementById("ingredients");
 
 // add style
 
 const divStyle = document.getElementById('header')
-divStyle.style.color = "green";
+divStyle.style.fontStyle = "italic";
 
-
-
-// const navbar = document.getElementById('nav');
-
-// // Add a click event listener to the navbar
-// nav.addEventListener('click', function(event) {
-//   // Check if the click happened on an anchor tag (link)
-//   if (event.target.tagName === 'A') {
-//     console.log('Navbar link clicked:', event.target.href);
-//     // You can add additional logic here (e.g., handle navigation, toggle menu, etc.)
-//   }
-// });
-
-
-
+// add events 
 // button event listener 
 
 const btn = document.querySelector("#more-recipes")
@@ -48,3 +32,42 @@ btn.addEventListener("click", function() {
     alert("You are about to leave this page. Press Back to stay on this page.")
 })
 
+//img onmouseover onmouseout event
+// const mouseover = document.getAttribute("onmouseover")
+// function newImage(){
+//     document.getElementById("img").src = ""/images/haitian-independence.webp"
+// }
+
+// function oldImage() {
+//     document.getElementById("img").src = ""/images/Haitian-Soup-Joumou.jpg"
+// }
+
+
+// iteration
+
+const divs = document.querySelectorAll('div')
+console.log(divs)
+
+divs.forEach(function(div){
+    div.style.color = 'red';
+    // div.style.backgroundColor = 'red'
+    // div.style.display = 'flex' ;
+    // div.style.alignItems = 'center'
+    // div.style.alignContent = 'space-around'
+    
+})
+
+
+// parent, child, sibling 
+
+let parentElement = document.getElementById('steps')
+console.log(parentElement)
+
+let firstChild = parentElement.firstChild;
+console.log('First child:', firstChild);
+
+let lastChild = parentElement.lastChild;
+console.log('Last child:', lastChild);
+
+let sibling = firstChild.nextSibling
+console.log('Child Sibling:', sibling)
