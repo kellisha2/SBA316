@@ -21,9 +21,8 @@ body.appendChild(newDiv)
 
 // add style
 
-// const divStyle = document.querySelectorAll('div')
-// divStyle.style.color = "green";
-// divStyle.style.border = '2px solid black';
+const divStyle = document.getElementById('header')
+divStyle.style.color = "green";
 
 
 
@@ -44,3 +43,8 @@ body.appendChild(newDiv)
 
 const btn = document.querySelector("#more-recipes")
 console.log(btn)
+
+btn.addEventListener("click", function() {
+    alert("You are about to leave this page. Press Back to stay on this page.")
+})
+
