@@ -8,13 +8,13 @@ const body = document.body
 
 const newDiv = document.createElement('div');
 const img = document.getElementById('img')
+const newElement = document.getElementById('newElement')
 
 newDiv.id = "history";
 console.log(newDiv)
 newDiv.innerHTML = "<h2>The History of Soup Joumou</h2><p>Every New Year’s Day, Haitians around the world consume soup joumou as a way to commemorate Haitian Independence Day. On January 1, 1804, Haitians declared independence from French colonial rule following the Haitian Revolution that began in 1791.</p>"
-img.after(newDiv)
 
-// body.appendChild(newDiv)
+newElement.appendChild(newDiv)
 
 
 
@@ -34,7 +34,7 @@ btn.addEventListener("click", function() {
 })
 
 // img onmouseover onmouseout event
-const mouseover = document.getAttribute("onmouseover")
+// const mouseover = document.getAttribute("onmouseover")
 function newImage(){
     document.getElementById("img").src = "/images/haitian-independence.webp"
 }
@@ -81,6 +81,7 @@ const form = document.getElementById('form')
 
 
 form.addEventListener('submit', (e) => {
+    console.log("e=", e)
     e.preventDefault()
     const email = document.getElementById('emails').value
     const patt = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;

@@ -1,0 +1,1 @@
+Manipulating the html code use DOM to create elements, select elements and add text to them, add events to elemens for user interactivity 
