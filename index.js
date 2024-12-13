@@ -8,7 +8,18 @@ const body = document.body
 
 const newDiv = document.createElement('div');
 const img = document.getElementById('img')
-const newElement = document.getElementById('newElement')
+const newElement = document.getElementById('newElement');
+const button = document.getElementById("darkmode");
+
+button.addEventListener("click", () => {
+    if(body.classList.contains("light-mode")) {
+        body.classList.add("dark-mode");
+        body.classList.remove("light-mode");
+    } else {
+        body.classList.add("light-mode");
+        body.classList.remove("dark-mode");
+    }
+})
 
 newDiv.id = "history";
 console.log(newDiv)
@@ -50,7 +61,7 @@ const divs = document.querySelectorAll('div')
 console.log(divs)
 
 divs.forEach(function(div){
-    div.style.color = 'red';
+    div.style.color = '#272e29';
     // div.style.backgroundColor = 'red'
     // div.style.display = 'flex' ;
     // div.style.alignItems = 'center'
@@ -73,22 +84,26 @@ console.log('Last child:', lastChild);
 let sibling = firstChild.nextSibling
 console.log('Child Sibling:', sibling)
 
+let parentNode = firstChild.nextSibling.parentNode
+console.log('Parent Node:', parentNode)
+
 
 
 // form validation
 
 const form = document.getElementById('form')
 
-
 form.addEventListener('submit', (e) => {
     console.log("e=", e)
     e.preventDefault()
-    const email = document.getElementById('emails').value
+    const email = document.getElementById('email').value
+    // const patt = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    // const patt = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const patt = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
    if(patt.test(email)){
-    alert('Your email has been submitted')
+    confirm('Do you want to confirm data submission?');
    } else {
-     alert('Must use email format with @ symbol')
+     alert('Invalid email address')
    }
 })
